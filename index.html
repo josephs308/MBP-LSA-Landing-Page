@@ -437,7 +437,10 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 .foot__links{display:flex;flex-wrap:wrap;gap:26px}
 .foot__links a{font-size:15px;text-decoration:none;color:var(--muted);transition:color 140ms ease}
 .foot__links a:hover{color:var(--ink)}
+.foot__contact{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
 .foot address{font-style:normal;font-size:14.5px;color:var(--muted)}
+.foot__tel{font-size:14.5px;color:var(--brand-ink);text-decoration:none;text-underline-offset:3px;transition:color 140ms ease}
+.foot__tel:hover{text-decoration:underline}
 
 /* ---------- motion: reveal on scroll, marketing tier ---------- */
 /* --tilt lets a collage piece keep its rotation through the reveal; without it
@@ -499,8 +502,8 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
 <!-- ARTIFACT:HEAD-END -->
 
 <!-- Structured data. FAQPage answers are generated from the visible FAQ copy and
-     must stay in sync with it. TODO: add postalAddress + telephone to the business
-     node -- LocalBusiness rich results need them and the page carries neither. -->
+     must stay in sync with it. The business node's address and telephone match the
+     visible NAP in the footer -- Google requires marked-up detail to be on the page. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -514,6 +517,15 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
       "name": "MBP Results",
       "alternateName": "Marketing Best Practices",
       "url": "https://neon-madeleine-09c51a.netlify.app/",
+      "telephone": "+1-385-217-1934",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "242 E 8265 S",
+        "addressLocality": "Sandy",
+        "addressRegion": "UT",
+        "postalCode": "84070",
+        "addressCountry": "US"
+      },
       "description": "MBP Results manages Google Local Services Ads for local businesses on a results basis: no set-up fee, no monthly retainer and no long-term contract.",
       "slogan": "If we can deliver leads, you pay. If not, you don't.",
       "areaServed": {
@@ -613,7 +625,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
   <div class="shell">
     <div class="nav__bar">
       <a class="brand" href="#top" aria-label="MBP Results home">
-        <img class="brand__logo" src="https://drive.google.com/thumbnail?id=1OLbaVggPmivCJOGLlV1coHrkI7Cwhdxj&amp;sz=w600" alt="MBP Results">
+        <img decoding="async" class="brand__logo" src="assets/mbp-results-logo.webp" width="1423" height="181" alt="MBP Results">
       </a>
       <button class="nav__toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
       <nav class="nav__links" id="navLinks">
@@ -653,28 +665,30 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
     </div>
   </section>
 
-  <!-- CLIENT LOGOS: add a logo by dropping the file in assets/logos/ and adding
-       one <li> to BOTH lists below. The second list is the seamless loop copy. -->
+  <!-- CLIENT LOGOS: add a logo by dropping a .webp in assets/ and adding one <li>
+       to BOTH lists below. The second list is the seamless loop copy and is
+       aria-hidden, so only the first list is announced. Give each img the real
+       business name as its alt text and its intrinsic width/height. -->
   <section class="clients" aria-label="Businesses we run Local Services Ads for">
     <div class="marquee" data-marquee>
       <div class="marquee__track">
         <ul class="marquee__set">
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1CxmljDRH_EChNfCWAQoZk7bJIoaZAYMm&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1yw6EmkDm0UkamoHjmCNWH9C8-fZEwTnV&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=19f8_RkAAc-1V7GAytiDCjSGeTwLxR0wB&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1yPMkLGNnn4iyyZoI8rFUbTYAd1sO8fH9&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1agFRILKngxak3pdcOldNgpziJS6HasQ6&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1_c1jMuvtv4ZBrakGE18H2DtDUQJ13SpD&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1xXj_7w5CKjWzQ0Sr_0Jx4WTUrAgsJlya&amp;sz=w320" alt="Client logo" loading="lazy"></li>
+          <li class="client"><img decoding="async" src="assets/logo-01.webp" width="500" height="500" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img decoding="async" src="assets/logo-06.webp" width="500" height="500" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img decoding="async" src="assets/logo-07.webp" width="500" height="500" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img decoding="async" src="assets/logo-04.webp" width="500" height="500" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img decoding="async" src="assets/logo-05.webp" width="500" height="500" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img decoding="async" src="assets/logo-02.webp" width="500" height="500" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img decoding="async" src="assets/logo-03.webp" width="500" height="500" alt="MBP Results" loading="lazy"></li>
         </ul>
         <ul class="marquee__set" aria-hidden="true">
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1CxmljDRH_EChNfCWAQoZk7bJIoaZAYMm&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1yw6EmkDm0UkamoHjmCNWH9C8-fZEwTnV&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=19f8_RkAAc-1V7GAytiDCjSGeTwLxR0wB&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1yPMkLGNnn4iyyZoI8rFUbTYAd1sO8fH9&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1agFRILKngxak3pdcOldNgpziJS6HasQ6&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1_c1jMuvtv4ZBrakGE18H2DtDUQJ13SpD&amp;sz=w320" alt="Client logo" loading="lazy"></li>
-          <li class="client"><img src="https://drive.google.com/thumbnail?id=1xXj_7w5CKjWzQ0Sr_0Jx4WTUrAgsJlya&amp;sz=w320" alt="Client logo" loading="lazy"></li>
+          <li class="client"><img decoding="async" src="assets/logo-01.webp" width="500" height="500" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img decoding="async" src="assets/logo-06.webp" width="500" height="500" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img decoding="async" src="assets/logo-07.webp" width="500" height="500" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img decoding="async" src="assets/logo-04.webp" width="500" height="500" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img decoding="async" src="assets/logo-05.webp" width="500" height="500" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img decoding="async" src="assets/logo-02.webp" width="500" height="500" alt="MBP Results" loading="lazy"></li>
+          <li class="client"><img decoding="async" src="assets/logo-03.webp" width="500" height="500" alt="MBP Results" loading="lazy"></li>
         </ul>
       </div>
     </div>
@@ -688,15 +702,15 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
            does the vertical placement. So they span every row and are fitted with
            object-fit:contain -- never cropped to a "card" height. -->
       <div class="problem__stage">
-        <img class="mock mock--leads reveal" src="https://drive.google.com/thumbnail?id=1JlnEiFUDJOq3TGAkJfqUcUAUR63nd-aJ&amp;sz=w800" alt="An empty leads inbox above a note reading low volume of calls and poor quality of leads">
+        <img decoding="async" class="mock mock--leads reveal" src="assets/problem-left.webp" width="750" height="1500" alt="An empty leads inbox above a note reading low volume of calls and poor quality of leads">
 
         <div class="problem__center">
-          <img class="problem__lead reveal" src="https://drive.google.com/thumbnail?id=1xvvjs-dq9-yjN0IXyew2MnI47BXzMgiy&amp;sz=w800" alt="Being charged for hours, retainers, and no results?">
+          <img decoding="async" class="problem__lead reveal" src="assets/problem-lead-card.webp" width="449" height="362" alt="Being charged for hours, retainers, and no results?">
 
           <h2 class="reveal"><em>Does this sound</em> like your last LSA campaign?</h2>
 
           <div class="slot slot--4x3 reveal" data-slot>
-            <img src="https://drive.google.com/thumbnail?id=1sIOOp03V9nyUzCwYZKwJ2JmDedgOFEvr&amp;sz=w1200" alt="A business owner at a laptop with their head in their hands">
+            <img decoding="async" src="assets/problem-photo.webp" width="1000" height="800" alt="A business owner at a laptop with their head in their hands">
           </div>
 
           <div class="problem__foot reveal">
@@ -705,7 +719,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
           </div>
         </div>
 
-        <img class="mock mock--quality reveal" src="https://drive.google.com/thumbnail?id=1UAW3GqEgfbSG5xGqH2EUMmdWaWUOvc7r&amp;sz=w800" alt="Leads marked poor quality above a note reading the phone does not ring regardless of budget">
+        <img decoding="async" class="mock mock--quality reveal" src="assets/problem-right.webp" width="750" height="1500" alt="Leads marked poor quality above a note reading the phone does not ring regardless of budget">
       </div>
     </div>
   </section>
@@ -728,7 +742,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
           </ul>
         </div>
         <div class="slot slot--4x3" data-slot>
-          <img src="https://drive.google.com/thumbnail?id=18o7ESL-tqZeU6CYokv6y8QVqzLlbKEnI&amp;sz=w1200" alt="Setting growth goals with a client">
+          <img decoding="async" src="assets/system-optimise.webp" width="500" height="400" alt="Setting growth goals with a client">
           <div class="slot__note"><b>Photo</b>Onboarding block.</div>
         </div>
       </div>
@@ -747,7 +761,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
         </div>
         <!-- ASSET 4 of 5: photo, 4:3 -->
         <div class="slot slot--4x3" data-slot>
-          <img src="https://drive.google.com/thumbnail?id=1ODA5UpMAo6pBMmJakpg4F_EmzdLPG2wr&amp;sz=w1200" alt="A Google Screened Local Services Ads result on a phone">
+          <img decoding="async" src="assets/system-onboarding.webp" width="625" height="500" alt="A Google Screened Local Services Ads result on a phone">
           <div class="slot__note"><b>Photo</b>Add assets/lsa-ranking.jpg at 4:3.</div>
         </div>
       </div>
@@ -765,7 +779,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
           </ul>
         </div>
         <div class="slot slot--4x3" data-slot>
-          <img src="https://drive.google.com/thumbnail?id=1TBSyvDH-6ZzQZZP5IPGByqWa51yeKnQH&amp;sz=w1200" alt="Pay per call, not per click">
+          <img decoding="async" src="assets/calendar.webp" width="500" height="400" alt="Pay per call, not per click">
           <div class="slot__note"><b>Photo</b>Qualified Local Leads block.</div>
         </div>
       </div>
@@ -783,7 +797,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
           </ul>
         </div>
         <div class="slot slot--4x3" data-slot>
-          <img src="https://drive.google.com/thumbnail?id=1CjNzEwsCKDE_5aM80UIS4OVXoY6GNPD-&amp;sz=w1200" alt="Reviewing campaign performance">
+          <img decoding="async" src="assets/system-launch.webp" width="500" height="400" alt="Reviewing campaign performance">
           <div class="slot__note"><b>Photo</b>Campaign Management block.</div>
         </div>
       </div>
@@ -818,7 +832,7 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
   <section class="about" id="about-us">
     <div class="shell about__grid">
       <div class="slot slot--4x3 reveal" data-slot>
-        <img src="https://drive.google.com/thumbnail?id=1XnPwM2Jrb1WIzjlT8rgcx7TClOWDAEcw&amp;sz=w1200" alt="The MBP Results team">
+        <img decoding="async" src="assets/team.webp" width="594" height="393" alt="The MBP Results team">
         <div class="slot__note"><b>Photo</b>About section.</div>
       </div>
       <div class="about__body">
@@ -896,7 +910,10 @@ video.videoframe,iframe.videoframe{display:block;object-fit:cover;background:var
       <a href="#testimonials">Testimonials</a>
       <a href="#book-a-call">Free Strategy Session</a>
     </nav>
-    <address>242 E 8265 S, Sandy Utah 84070</address>
+    <div class="foot__contact">
+      <address>242 E 8265 S, Sandy Utah 84070</address>
+      <a class="foot__tel" href="tel:+13852171934">(385) 217-1934</a>
+    </div>
   </div>
 </footer>
 <!-- ARTIFACT:BODY-END -->
